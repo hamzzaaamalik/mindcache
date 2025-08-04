@@ -97,48 +97,49 @@ npm install
 node mindcache.js ping
 
 
-📡 API Reference
+### API Reference
 Base URL: http://localhost:3000
 
-Health Check
+## Health Check
 
 
-GET /health
-Save Memory
+           GET /health
+
+## Save Memory
+
+           POST /api/memory/save
+           Content-Type: application/json
+           
+           {
+             "userId": "user_123",
+             "sessionId": "session_456",
+             "content": "I learned about memory decay",
+             "importance": 0.8,
+             "ttlHours": 720
+           }
+
+## Recall Memories
+
+           POST /api/memory/recall
+           Content-Type: application/json
+           
+           {
+             "userId": "user_123",
+             "query": "memory",
+             "limit": 10
+           }
+## Summarize Session
+
+           POST /api/memory/summarize
+           Content-Type: application/json
+           
+           {
+             "sessionId": "session_456"
+           }
 
 
-POST /api/memory/save
-Content-Type: application/json
 
-{
-  "userId": "user_123",
-  "sessionId": "session_456",
-  "content": "I learned about memory decay",
-  "importance": 0.8,
-  "ttlHours": 720
-}
-Recall Memories
-
-
-POST /api/memory/recall
-Content-Type: application/json
-
-{
-  "userId": "user_123",
-  "query": "memory",
-  "limit": 10
-}
-Summarize Session
-
-POST /api/memory/summarize
-Content-Type: application/json
-
-{
-  "sessionId": "session_456"
-}
-➡️ View full API docs in /docs/api-reference.md
-
-💻 CLI Usage
+### CLI Usage
 
 
 # Ping
@@ -155,7 +156,8 @@ mindcache sessions --user alice --create --name "Meeting Notes"
 
 # Summarize
 mindcache summarize --session session1
-📦 SDK Usage (JavaScript)
+
+### SDK Usage (JavaScript)
 
 const { MindCacheSDK } = require('mindcache-sdk');
 
@@ -192,13 +194,13 @@ pm2 save
 pm2 startup
 Option 2: Docker
 
-
 docker-compose up -d
 Option 3: Kubernetes
 
-
 # See k8s-deployment.yaml in repo
-📊 Monitoring & Observability
+
+
+### Monitoring & Observability
 Health Check: GET /health
 
 Metrics: Prometheus-compatible export
