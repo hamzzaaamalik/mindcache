@@ -54,21 +54,25 @@ Modern AI agents struggle to maintain memory across sessions and scale with cont
 
 ## Architecture
 
-CLI / SDK / App
-│
-▼
-┌──────────────┐
-│ Node.js API │ ← RESTful endpoints
-└──────┬───────┘
-│
-▼
-┌───────────────┐
-│ Rust Core │ ← Memory engine: store, decay, search
-└──────┬────────┘
-▼
-┌───────────────┐
-│ Local Storage │ ← Indexed and compressed
-└───────────────┘
+           ┌────────────────────┐
+           │   CLI / SDK / App  │
+           └────────┬───────────┘
+                    │
+                    ▼
+           ┌────────────────────┐
+           │   Node.js API      │   ← RESTful endpoints (Express)
+           └────────┬───────────┘
+                    │  FFI Bridge / IPC
+                    ▼
+           ┌────────────────────┐
+           │     Rust Core      │   ← Memory engine: store, decay, search
+           └────────┬───────────┘
+                    │
+                    ▼
+           ┌────────────────────┐
+           │   Local Storage    │   ← Indexed and compressed
+           └────────────────────┘
+
 
 
 ---
