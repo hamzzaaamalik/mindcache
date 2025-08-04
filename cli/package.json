@@ -30,15 +30,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hamzzaaamalik/mindcache.git",
+    "url": "https://github.com/mindcache/mindcache.git",
     "directory": "cli"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "commander": "^11.1.0",
-    "inquirer": "^9.2.12",
+    "commander": "^9.5.0",
+    "inquirer": "^8.2.6",
     "chalk": "^4.1.2",
     "ora": "^5.4.1",
     "cli-table3": "^0.6.3"
