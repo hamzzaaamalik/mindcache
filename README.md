@@ -80,25 +80,25 @@ Modern AI agents struggle to maintain memory across sessions and scale with cont
 ## Quick Start
  
 # 1. Clone the repo
-git clone https://github.com/hamzzaaamalik/mindcache.git
-cd mindcache
+           git clone https://github.com/hamzzaaamalik/mindcache.git
+           cd mindcache
 
 # 2. Start the API
-cd node-api
-npm install
-npm start
+           cd node-api
+           npm install
+           npm start
 
 # 3. Test it
-curl http://localhost:3000/health
+           curl http://localhost:3000/health
 
 # 4. Use the CLI
-cd ../cli
-npm install
-node mindcache.js ping
+           cd ../cli
+           npm install
+           node mindcache.js ping
 
 
 ### API Reference
-Base URL: http://localhost:3000
+           Base URL: http://localhost:3000
 
 ## Health Check
 
@@ -143,87 +143,87 @@ Base URL: http://localhost:3000
 
 
 # Ping
-mindcache ping
+           mindcache ping
 
 # Save memory
-mindcache save --user alice --session session1 --content "AI notes"
+           mindcache save --user alice --session session1 --content "AI notes"
 
 # Recall memory
-mindcache recall --user alice --query "AI"
+           mindcache recall --user alice --query "AI"
 
 # Session management
-mindcache sessions --user alice --create --name "Meeting Notes"
+           mindcache sessions --user alice --create --name "Meeting Notes"
 
 # Summarize
-mindcache summarize --session session1
+           mindcache summarize --session session1
 
 ### SDK Usage (JavaScript)
 
-const { MindCacheSDK } = require('mindcache-sdk');
+           const { MindCacheSDK } = require('mindcache-sdk');
+           
+           const mindcache = new MindCacheSDK();
+           
+           await mindcache.saveMemory({
+             userId: 'u1',
+             sessionId: 's1',
+             content: 'Studied reinforcement learning',
+             importance: 0.9
+           });
+           
+           const context = await mindcache.recallMemories({
+             userId: 'u1',
+             query: 'reinforcement'
+           });
 
-const mindcache = new MindCacheSDK();
-
-await mindcache.saveMemory({
-  userId: 'u1',
-  sessionId: 's1',
-  content: 'Studied reinforcement learning',
-  importance: 0.9
-});
-
-const context = await mindcache.recallMemories({
-  userId: 'u1',
-  query: 'reinforcement'
-});
-
-Examples
+## Examples
 AI Chatbot Memory
 Learning Tracker
 Meeting Notes Agent
 
 All available in the /examples folder.
 
-Deployment
+### Deployment
 Option 1: PM2 (Recommended)
-bash
-Copy
-Edit
-npm install -g pm2
 
-pm2 start ecosystem.config.js --env production
-pm2 save
-pm2 startup
+           npm install -g pm2
+           pm2 start ecosystem.config.js --env production
+           pm2 save
+           pm2 startup
+           
 Option 2: Docker
 
-docker-compose up -d
+           docker-compose up -d
+
 Option 3: Kubernetes
 
 # See k8s-deployment.yaml in repo
 
 
 ### Monitoring & Observability
-Health Check: GET /health
+           Health Check: GET /health
 
 Metrics: Prometheus-compatible export
 
-Logs: Winston (file + console)
+           Logs: Winston (file + console)
 
 Alerts: Custom thresholds configurable
 
-🛠️ Troubleshooting
-Issue	Fix
-ffi-napi errors	Use Docker or install Rust manually
-No data recalled	Check TTL, session ID, importance, decay settings
-CLI not working	Use npm link or node mindcache.js
-API down	Ensure npm start and port 3000 is active
+## Troubleshooting
+           Issue	Fix
+           ffi-napi errors	Use Docker or install Rust manually
+           No data recalled	Check TTL, session ID, importance, decay settings
+           CLI not working	Use npm link or node mindcache.js
+           API down	Ensure npm start and port 3000 is active
 
-🤝 Contributing
+## Contributing
 We welcome contributions!
 
 
-git clone https://github.com/hamzzaaamalik/mindcache.git
-git checkout -b feature/your-feature
-npm run dev
-npm test
+           git clone https://github.com/hamzzaaamalik/mindcache.git
+           git checkout -b feature/your-feature
+           npm run dev
+           npm test
+           
 Follow conventional commits
 Add tests and update docs before PR
 
