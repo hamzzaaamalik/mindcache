@@ -1,10 +1,10 @@
-# 🧠 MindCache
+# MindCache
 
 **MindCache** is a high-performance memory storage and retrieval system built for AI applications, chatbots, and intelligent agents. It enables **context persistence**, **intelligent memory decay**, **fast recall**, and **multi-session memory intelligence**, making it the ideal memory backend for AI workflows.
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
-[🧭 View Roadmap](#️-roadmap) | [📚 API Docs](#-api-reference) | [🚀 Get Started](#-quick-start) | [🔧 Deployment](#️-deployment)
+[ View Roadmap](#️-roadmap) | [ API Docs](#-api-reference) | [ Get Started](#-quick-start) | [🔧 Deployment](#️-deployment)
 
 ---
 
