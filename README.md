@@ -77,21 +77,21 @@ Modern AI agents struggle to maintain memory across sessions and scale with cont
 
 ---
 
-## Quick Start
+# Quick Start
  
-# 1. Clone the repo
+## 1. Clone the repo
            git clone https://github.com/hamzzaaamalik/mindcache.git
            cd mindcache
 
-# 2. Start the API
+## 2. Start the API
            cd node-api
            npm install
            npm start
 
-# 3. Test it
+## 3. Test it
            curl http://localhost:3000/health
 
-# 4. Use the CLI
+## 4. Use the CLI
            cd ../cli
            npm install
            node mindcache.js ping
@@ -230,37 +230,24 @@ Add tests and update docs before PR
 📄 License
 MIT — see LICENSE
 
-    Roadmap
-    v1.1.0
-Memory TTL and Decay
+## Roadmap
+### v1.1.0
+           Memory TTL and Decay
+           Importance scoring
+           Bulk save + Summarize sessions
+### v1.2.0
+           Vector embedding support
+           GraphQL API
+           Multi-language SDKs
+           Real-time sync across nodes
+### v2.0.0
+           Distributed cluster architecture
+           Advanced security and ACLs
+           Enterprise monitoring dashboard
 
-Importance scoring
+### Built By
+           Malik Ameer Hamza Khan
+           Empowering AI agents with intelligent memory.
 
-Bulk save + Summarize sessions
-
-    v1.2.0
-Vector embedding support
-
-GraphQL API
-
-Multi-language SDKs
-
-Real-time sync across nodes
-
-    v2.0.0
-Distributed cluster architecture
-
-Advanced security and ACLs
-
-Enterprise monitoring dashboard
-
-    Built By
-Malik Ameer Hamza Khan
-Empowering AI agents with intelligent memory.
-
-    Support
-GitHub Issues
-
-Docs (coming soon)
-
-Email: support@mindcache.dev
+### Support
+           GitHub Issues
